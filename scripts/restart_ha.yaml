@@ -1,0 +1,10 @@
+alias: Restart Home Assistant (not working in dev)
+sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "Restarting Home Assistant"
+# - service: notify.pushbullet
+#   data:
+#     message: "Restarting Home Assistant at {{    states('sensor.date__time') }}"
+- service: shell_command.restart_ha

@@ -1,0 +1,12 @@
+- platform: openweathermap
+  name: OpenWeatherMap Sensor
+  api_key: !secret sensor_openweathermap_apikey
+  monitored_conditions:
+    - weather
+    - temperature
+    - humidity
+    - clouds
+    - rain
+    - pressure
+    - wind_speed
+    - snow

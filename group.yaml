@@ -1,0 +1,35 @@
+# https://home-assistant.io/components/group/
+
+############################
+# Views                    #
+############################
+
+default_view:
+  view: yes
+  entities:
+    - sun.sun
+    - group.card_weather
+
+weather:
+  view: yes
+  name: Weather
+  entities:
+    - group.card_weather
+
+
+
+############################
+# Cards                    #
+############################
+
+card_weather:
+  name: Weather Status
+  entities:
+    - sensor.openweathermap_sensor_condition
+    - sensor.openweathermap_sensor_temperature
+    - sensor.openweatnermap_sensor_cloud_coverage
+    - sensor.openweathermap_sensor_humidity
+    - sensor.openweathermap_sensor_pressure
+    - sensor.openweathermap_sensor_rain
+    - sensor.openweathermap_sensor_snow
+    - sensor.openweathermap_sensor_wind_speed

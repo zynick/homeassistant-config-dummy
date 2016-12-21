@@ -1,0 +1,67 @@
+homeassistant:
+  name: SMARTBOX
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
+  unit_system: metric
+  time_zone: !secret homeassistant_time_zone
+
+# Enable this for production
+http:
+  # api_password: !secret http_api_password
+  # ssl_certificate: !secret http_ssl_certificate
+  # ssl_key: !secret http_ssl_key
+  cors_allowed_origins:
+    - https://google.com
+    - https://home-assistant.io
+
+
+############################
+# Zones                    #
+############################
+
+# https://home-assistant.io/components/zone/
+
+zone:
+  name: Home
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
+  radius: 1000
+  icon: mdi:home
+
+zone 2:
+  name: Work
+  latitude: !secret zone_work_latitude
+  longitude: !secret zone_work_longitude
+  radius: 1000
+  icon: mdi:briefcase
+
+
+
+############################
+# Components               #
+############################
+
+group: !include group.yaml
+sensor: !include sensor.yaml
+sun:
+
+
+
+############################
+# Enables                  #
+############################
+
+frontend:       # Enables the frontend
+# updater:      # Checks for available updates
+# discovery:    # Discover some devices automatically
+conversation:   # Allows you to issue voice commands from the frontend in enabled browsers
+history:        # Enables support for tracking state changes over time.
+logbook:        # View all events in a logbook
+
+
+# TODO [LOW] set Up Multiple Room Cards (Dinig Area, Master Bedroom) this is just for demo purpose. useless
+# TODO [LOW] customize.yaml - customise icons & add smartbox logo in
+# TODO [LOW] tado component (bother about this later)
+# TODO [LOW] restart HA / cpu status / ram status / last boot etc
+# TODO [LOW] preset script - trigger rest sensor update (/ds/getLastCalledSceneName)
