@@ -8,9 +8,10 @@ homeassistant:
 
 # Enable this for production
 http:
-  # api_password: !secret http_api_password
+  api_password: !secret http_api_password
   # ssl_certificate: !secret http_ssl_certificate
   # ssl_key: !secret http_ssl_key
+  # development: 1
   cors_allowed_origins:
     - https://google.com
     - https://home-assistant.io
